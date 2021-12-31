@@ -16,3 +16,18 @@ temp9 <- readOGR(grids9)
 temp9a <- elide(temp9, shift=c(30, 0))
 
 writeOGR(temp9a, "D:/GeographicData/HexMap_ISEA4H_res9_aor_shifted.shp", "HexMap_ISEA4H_res9_aor", driver="ESRI Shapefile")
+
+
+// Updated Coords:
+
+dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 40, resround = "nearest", metric = TRUE)
+
+grid <- dgrectgrid(dggs, minlat = 25, minlon = -120, maxlat = 80, maxlon = 30, savegrid = "D:/GeographicData/HexMap_ISEA4H_res8_AtlEur.shp")
+
+grids8 <- "D:/GeographicData/HexMap_ISEA4H_res8_AtlEur.shp"
+
+temp8 <- readOGR(grids8)
+
+> temp8a <- elide(temp8, shift=c(30, 0))
+
+> writeOGR(temp8a, "D:/GeographicData/HexMap_ISEA4H_res8_AtlEur_Shft30Lon.shp", "HexMap_ISEA4H_res8_AtlEur", driver="ESRI Shapefile")
