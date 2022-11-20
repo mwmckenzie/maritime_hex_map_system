@@ -31,3 +31,10 @@ temp8 <- readOGR(grids8)
 > temp8a <- elide(temp8, shift=c(30, 0))
 
 > writeOGR(temp8a, "D:/GeographicData/HexMap_ISEA4H_res8_AtlEur_Shft30Lon.shp", "HexMap_ISEA4H_res8_AtlEur", driver="ESRI Shapefile")
+
+
+---------
+
+> grid <- dgrectgrid(dggs, minlat = 20, minlon = -120, maxlat = 80, maxlon = 80, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp")
+> grids4 <- "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp"
+> temp4 <- readOGR(grids4)
