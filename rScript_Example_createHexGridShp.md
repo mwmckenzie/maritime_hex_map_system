@@ -40,6 +40,10 @@ temp8 <- readOGR(grids8)
 
 ---------
 
+## Updated Methodology (Nov 2022)
+
+### dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 500, resround = "nearest", metric = TRUE)
+
 > grid <- dgrectgrid(dggs, minlat = 20, minlon = -150, maxlat = 80, maxlon = 50, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp")
 >
 > grids4 <- "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp"
@@ -51,6 +55,8 @@ temp8 <- readOGR(grids8)
 > writeOGR(temp4a, "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_WideOffset.shp", "HexMap_ISEA4H_Res4_Wide", driver="ESRI Shapefile")
 
 ------------
+
+### dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 250, resround = "nearest", metric = TRUE)
 
 > grid <- dgrectgrid(dggs, minlat = 20, minlon = -150, maxlat = 80, maxlon = 50, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res5_Wide.shp")
 >
