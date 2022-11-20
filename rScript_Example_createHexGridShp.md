@@ -1,9 +1,14 @@
-// R Script Example
-// Creating and Exporting Shifted Hex Map Shapefiles
-// Grid: ISEA4H
-// Cell Spacing: 
-// Shift:  +30 deg (lon), + 0 deg (lat)
-// Example: Creates a hex grid at resolution '9'; clips to lat/lon bounding box (25, -80), (80, 50); saves non-shifted grid to shp, imports and shifts shp by 30 deg longitude; saves shifted grid as shp
+# R Script Example
+## Creating and Exporting Shifted Hex Map Shapefiles
+## Grid: ISEA4H
+### Cell Spacing: 
+> Shift:  +30 deg (lon), + 0 deg (lat)
+> Example: Creates a hex grid at resolution '9'; clips to lat/lon bounding box (25, -80), (80, 50); saves non-shifted grid to shp, imports and shifts shp by 30 deg longitude; saves shifted grid as shp
+
+Required:
+ - maptools
+ - rgdal
+
 
 dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 10, resround = "nearest", metric = TRUE)
 
@@ -37,4 +42,9 @@ temp8 <- readOGR(grids8)
 
 > grid <- dgrectgrid(dggs, minlat = 20, minlon = -120, maxlat = 80, maxlon = 80, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp")
 > grids4 <- "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp"
+
 > temp4 <- readOGR(grids4)
+
+> temp4a <- elide(temp4, shift=c(30, 0))
+
+> writeOGR(temp4a, "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_WideOffset.shp", "HexMap_ISEA4H_Res4_Wide", driver="ESRI Shapefile")
