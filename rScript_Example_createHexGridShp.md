@@ -9,20 +9,20 @@
  - maptools
  - rgdal
 
-#### Updated Methodology (Nov 2022)
+### Updated Methodology (Nov 2022)
 
 ## Resolution 4 (R4)
 
 ### dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 500, resround = "nearest", metric = TRUE)
 
 > grid <- dgrectgrid(dggs, minlat = 20, minlon = -150, maxlat = 80, maxlon = 50, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp")
->
+
 > grids4 <- "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_Wide.shp"
->
+
 > temp4 <- readOGR(grids4)
->
+
 > temp4a <- elide(temp4, shift=c(30, 0))
->
+
 > writeOGR(temp4a, "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res4_WideOffset.shp", "HexMap_ISEA4H_Res4_Wide", driver="ESRI Shapefile")
 
 ## Resolution 5 (R4)
@@ -30,20 +30,20 @@
 ### dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 250, resround = "nearest", metric = TRUE)
 
 > grid <- dgrectgrid(dggs, minlat = 20, minlon = -150, maxlat = 80, maxlon = 50, savegrid = "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res5_Wide.shp")
->
+
 > grids5 <- "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res5_Wide.shp"
->
+
 > temp5 <- readOGR(grids5)
->
+
 > temp5a <- elide(temp5, shift=c(30, 0))
->
+
 > writeOGR(temp5a, "E:/Projects/HexagonR/Shp/HexMap_ISEA4H_Res5_WideOffset.shp", "HexMap_ISEA4H_Res5_Wide", driver="ESRI Shapefile")
 
 
 -------
 
 
-## Archived
+# Archived
 
 dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 10, resround = "nearest", metric = TRUE)
 
