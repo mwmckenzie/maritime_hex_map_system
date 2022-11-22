@@ -74,7 +74,7 @@ shiftedGrid <- elide(loadedGrid, shift=c(30, 0))
 writeOGR(shiftedGrid, "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res6_WideOffset.shp", "HexMap_ISEA4H_Res6_Wide", driver="ESRI Shapefile")
 ```
 
-## Resolution 7(R7)
+## Resolution 7 (R7)
 
 ### R Commands
 
@@ -92,7 +92,7 @@ shiftedGrid <- elide(loadedGrid, shift=c(30, 0))
 writeOGR(shiftedGrid, "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res7_WideOffset.shp", "HexMap_ISEA4H_Res7_Wide", driver="ESRI Shapefile")
 ```
 
-## Resolution 9(R7)
+## Resolution 9 (R9)
 
 ### R Commands
 
