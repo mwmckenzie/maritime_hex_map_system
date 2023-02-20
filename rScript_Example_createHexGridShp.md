@@ -52,9 +52,9 @@ grids <- "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res5_Wide.shp"
 loadedGrid <- readOGR(grids)
 
 shiftedGrid <- elide(loadedGrid, shift=c(30, 0))
-```
 
 writeOGR(shiftedGrid, "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res5_WideOffset.shp", "HexMap_ISEA4H_Res5_Wide", driver="ESRI Shapefile")
+```
 
 ## Resolution 6 (R6)
 
@@ -90,6 +90,24 @@ loadedGrid <- readOGR(grids)
 shiftedGrid <- elide(loadedGrid, shift=c(30, 0))
 
 writeOGR(shiftedGrid, "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res7_WideOffset.shp", "HexMap_ISEA4H_Res7_Wide", driver="ESRI Shapefile")
+```
+
+## Resolution 8 (R8)
+
+### R Commands
+
+```
+dggs <- dgconstruct("ISEA",aperture = 4, topology = "HEXAGON", spacing = 30, resround = "nearest", metric = TRUE)
+
+grid <- dgrectgrid(dggs, minlat = 18, minlon = -150, maxlat = 82, maxlon = 40, savegrid = "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res8_Wide.shp")
+
+grids <- "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res8_Wide.shp"
+
+loadedGrid <- readOGR(grids)
+
+shiftedGrid <- elide(loadedGrid, shift=c(30, 0))
+
+writeOGR(shiftedGrid, "E:/Projects/HexagonR/ShpR/HexMap_ISEA4H_Res8_WideOffset.shp", "HexMap_ISEA4H_Res8_Wide", driver="ESRI Shapefile")
 ```
 
 ## Resolution 9 (R9)
